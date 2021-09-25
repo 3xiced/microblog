@@ -12,20 +12,6 @@ def index():
     else:
           user = {'username':username}
           name = username
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'Beautiful day in Portland!'
-        },
-        {
-            'author': {'username': 'Susan'},
-            'body': 'The Avengers movie was so cool!'
-        }, 
-        {
-            'author': {'username': 'Steve'},
-            'body': 'fuck'
-        }
-    ]
     return render_template('index.html', title='Home', user=user, posts=posts)
 @app.route('/login', methods=['GET', 'POST'])
 def login():
