@@ -1,5 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ user.username }}!</h1>
+    <div class="container text-center">
+            <h1>Hi, {{ user.username }}!</h1>
+    </div>
+    <style>
+    div.container{
+        margin-top:10px;
+    }
+    </style>
 {% endblock %}
