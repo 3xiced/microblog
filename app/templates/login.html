@@ -3,24 +3,31 @@
 {% block content %}
     <h1 class="text-center">Sign In</h1>
     <form action="/index" method="post" novalidate>
-    <div class="container">
-        <div class="form-floating mb-3">
-            <input name="username" type="text" class="form-control" id="floatingInput" placeholder="Alexander">
-            <label for="floatingInput">Type Your Name</label>
+        {{ form.hidden_tag() }}
+        <div class="text-center container">
+            {{ form.username.label }}
+            <div class="text-center form-floating mb-3">
+                {{ form.username(size=48) }}
+            </div>
+            {{ form.password.label }}
+            <div class="text-center form-floating mb-3">
+                {{ form.password(size=48) }}
+            </div>
+            <div class="text-center">
+                <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+                <p>{{ form.submit() }}</p>
+            </div>
+            <style>
+                div.form-floating {
+                    margin: 10px;
+                }
+
+                input.btn {
+                    margin: 10px;
+                    position: center;
+                    text-align: center;
+                }
+            </style>
         </div>
-        <div class="text-center">
-        <input type="submit" name="submitbutton" class="btn btn-light btn-lg" value="Submit">
-        </div>
-        <style>
-            div.form-floating{
-                margin: 10px;
-            }
-            input.btn{
-                margin: 10px;
-                position: center;
-                text-align: center;
-            }
-        </style>
-    </div>
     </form>
 {% endblock %}
